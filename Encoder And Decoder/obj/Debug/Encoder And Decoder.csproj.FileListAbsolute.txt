@@ -1,0 +1,8 @@
+D:\C#\project\Encoder And Decoder\Encoder And Decoder\bin\Debug\Encoder And Decoder.exe
+D:\C#\project\Encoder And Decoder\Encoder And Decoder\bin\Debug\Encoder And Decoder.pdb
+D:\C#\project\Encoder And Decoder\Encoder And Decoder\obj\Debug\Encoder And Decoder.csprojResolveAssemblyReference.cache
+D:\C#\project\Encoder And Decoder\Encoder And Decoder\obj\Debug\Encoder_And_Decoder.FrmMain.resources
+D:\C#\project\Encoder And Decoder\Encoder And Decoder\obj\Debug\Encoder_And_Decoder.Properties.Resources.resources
+D:\C#\project\Encoder And Decoder\Encoder And Decoder\obj\Debug\Encoder And Decoder.csproj.GenerateResource.Cache
+D:\C#\project\Encoder And Decoder\Encoder And Decoder\obj\Debug\Encoder And Decoder.exe
+D:\C#\project\Encoder And Decoder\Encoder And Decoder\obj\Debug\Encoder And Decoder.pdb
