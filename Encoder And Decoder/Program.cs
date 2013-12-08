@@ -17,5 +17,6 @@ namespace Encoder_And_Decoder
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmMain());
         }
+		//test git modified
     }
 }
