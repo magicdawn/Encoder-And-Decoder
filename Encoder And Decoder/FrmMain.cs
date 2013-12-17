@@ -28,6 +28,7 @@ namespace Encoder_And_Decoder
             rdb2Unicode.CheckedChanged += UnicodeRadioButtonChange;
             rdb2Chinese.CheckedChanged += UnicodeRadioButtonChange;
             chkKeepSpace.CheckedChanged += UnicodeRadioButtonChange;
+            chkEnChar.CheckedChanged += UnicodeRadioButtonChange;
         }
 
         #region Url编码
@@ -74,11 +75,21 @@ namespace Encoder_And_Decoder
                 StringBuilder sb = new StringBuilder();
 
                 //保留空格 勾上 原文字
-                string text = chkKeepSpace.Checked 
+                string text = chkKeepSpace.Checked
                     ? textBox3.Text : textBox3.Text.Trim();
                 foreach (char c in text)
                 {
-                    sb.Append(@"\u"+((int)c).ToString("x4"));
+                    if (chkEnChar.Checked && ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')))
+                    {
+                        //保留英文
+                        sb.Append(c);
+                    }
+                    else
+                    {
+                        //不保留
+                        sb.Append(@"\u" + ((int)c).ToString("x4"));
+                    }
+
                 }
                 textBox4.Text = sb.ToString();
             }
@@ -86,8 +97,8 @@ namespace Encoder_And_Decoder
             {
                 //从Unicode转换
                 //num -> char
-                textBox4.Text= Regex.Replace(textBox3.Text, @"\\u(\w{4})", (m) => {
-                    return ((char)int.Parse(m.Groups[1].Value,System.Globalization.NumberStyles.HexNumber)).ToString();
+                textBox4.Text = Regex.Replace(textBox3.Text, @"\\u(\w{4})", (m) => {
+                    return ((char)int.Parse(m.Groups[1].Value, System.Globalization.NumberStyles.HexNumber)).ToString();
                 });
             }
         }
@@ -96,6 +107,12 @@ namespace Encoder_And_Decoder
         private void FrmMain_Load(object sender, EventArgs e)
         {
             tabMain.SelectedIndex = 1;
+        }
+
+        private void rdb2Unicode_CheckedChanged(object sender, EventArgs e)
+        {
+            chkEnChar.Enabled = rdb2Unicode.Checked;
+            chkKeepSpace.Enabled = rdb2Unicode.Checked;
         }
     }
 }

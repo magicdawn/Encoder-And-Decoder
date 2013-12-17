@@ -37,11 +37,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Unicode = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.chkKeepSpace = new System.Windows.Forms.CheckBox();
             this.rdb2Chinese = new System.Windows.Forms.RadioButton();
             this.rdb2Unicode = new System.Windows.Forms.RadioButton();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.chkKeepSpace = new System.Windows.Forms.CheckBox();
+            this.chkEnChar = new System.Windows.Forms.CheckBox();
             this.tabMain.SuspendLayout();
             this.Url.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -150,19 +151,31 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.chkEnChar);
             this.panel2.Controls.Add(this.chkKeepSpace);
             this.panel2.Controls.Add(this.rdb2Chinese);
             this.panel2.Controls.Add(this.rdb2Unicode);
-            this.panel2.Location = new System.Drawing.Point(8, 167);
+            this.panel2.Location = new System.Drawing.Point(8, 153);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(612, 36);
+            this.panel2.Size = new System.Drawing.Size(612, 60);
             this.panel2.TabIndex = 8;
+            // 
+            // chkKeepSpace
+            // 
+            this.chkKeepSpace.AutoSize = true;
+            this.chkKeepSpace.Enabled = false;
+            this.chkKeepSpace.Location = new System.Drawing.Point(375, 6);
+            this.chkKeepSpace.Name = "chkKeepSpace";
+            this.chkKeepSpace.Size = new System.Drawing.Size(234, 24);
+            this.chkKeepSpace.TabIndex = 5;
+            this.chkKeepSpace.Text = "保留首尾空格(编码成Unicode时)";
+            this.chkKeepSpace.UseVisualStyleBackColor = true;
             // 
             // rdb2Chinese
             // 
             this.rdb2Chinese.AutoSize = true;
             this.rdb2Chinese.Checked = true;
-            this.rdb2Chinese.Location = new System.Drawing.Point(134, 5);
+            this.rdb2Chinese.Location = new System.Drawing.Point(12, 29);
             this.rdb2Chinese.Name = "rdb2Chinese";
             this.rdb2Chinese.Size = new System.Drawing.Size(125, 24);
             this.rdb2Chinese.TabIndex = 4;
@@ -173,23 +186,24 @@
             // rdb2Unicode
             // 
             this.rdb2Unicode.AutoSize = true;
-            this.rdb2Unicode.Location = new System.Drawing.Point(3, 5);
+            this.rdb2Unicode.Location = new System.Drawing.Point(12, 5);
             this.rdb2Unicode.Name = "rdb2Unicode";
             this.rdb2Unicode.Size = new System.Drawing.Size(125, 24);
             this.rdb2Unicode.TabIndex = 3;
             this.rdb2Unicode.Text = "编码成Unicode";
             this.rdb2Unicode.UseVisualStyleBackColor = true;
+            this.rdb2Unicode.CheckedChanged += new System.EventHandler(this.rdb2Unicode_CheckedChanged);
             // 
             // textBox4
             // 
             this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(8, 209);
+            this.textBox4.Location = new System.Drawing.Point(8, 213);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox4.Size = new System.Drawing.Size(612, 176);
+            this.textBox4.Size = new System.Drawing.Size(612, 172);
             this.textBox4.TabIndex = 6;
             // 
             // textBox3
@@ -201,19 +215,22 @@
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox3.Size = new System.Drawing.Size(612, 152);
+            this.textBox3.Size = new System.Drawing.Size(612, 145);
             this.textBox3.TabIndex = 7;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // chkKeepSpace
+            // chkEnChar
             // 
-            this.chkKeepSpace.AutoSize = true;
-            this.chkKeepSpace.Location = new System.Drawing.Point(374, 7);
-            this.chkKeepSpace.Name = "chkKeepSpace";
-            this.chkKeepSpace.Size = new System.Drawing.Size(234, 24);
-            this.chkKeepSpace.TabIndex = 5;
-            this.chkKeepSpace.Text = "保留首尾空格(编码成Unicode时)";
-            this.chkKeepSpace.UseVisualStyleBackColor = true;
+            this.chkEnChar.AutoSize = true;
+            this.chkEnChar.Checked = true;
+            this.chkEnChar.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkEnChar.Enabled = false;
+            this.chkEnChar.Location = new System.Drawing.Point(375, 30);
+            this.chkEnChar.Name = "chkEnChar";
+            this.chkEnChar.Size = new System.Drawing.Size(112, 24);
+            this.chkEnChar.TabIndex = 6;
+            this.chkEnChar.Text = "保留英文字母";
+            this.chkEnChar.UseVisualStyleBackColor = true;
             // 
             // FrmMain
             // 
@@ -257,6 +274,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.CheckBox chkKeepSpace;
+        private System.Windows.Forms.CheckBox chkEnChar;
     }
 }
 
