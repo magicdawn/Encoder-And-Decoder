@@ -227,9 +227,9 @@
             this.chkEnChar.Enabled = false;
             this.chkEnChar.Location = new System.Drawing.Point(375, 30);
             this.chkEnChar.Name = "chkEnChar";
-            this.chkEnChar.Size = new System.Drawing.Size(112, 24);
+            this.chkEnChar.Size = new System.Drawing.Size(234, 24);
             this.chkEnChar.TabIndex = 6;
-            this.chkEnChar.Text = "保留英文字母";
+            this.chkEnChar.Text = "保留英文字母(编码成Unicode时)";
             this.chkEnChar.UseVisualStyleBackColor = true;
             // 
             // FrmMain
